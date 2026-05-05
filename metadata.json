@@ -1,0 +1,6 @@
+{
+  "name": "WORKRIVA",
+  "description": "Premium B2B AI consultancy specializing in HR Tech & Workforce AI infrastructure. Personal practitioner experience combined with full-stack AI implementation to deliver measurable ROI.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["AI Consulting", "HR Automation", "Workforce Intelligence"]
+}
