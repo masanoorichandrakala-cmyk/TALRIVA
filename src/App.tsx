@@ -330,9 +330,7 @@ function RivaWidget(){
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
     const vs=window.speechSynthesis.getVoices();
-    const fv=vs.find(v=>v.name==="Google UK English Female")||vs.find(v=>v.name.includes("Female"))||vs.find(v=>/female|zira|samantha|victoria|karen|moira/i.test(v.name))||vs.find((_v,i)=>i===1)||vs[0];
-    if(fv)u.voice=fv;u.rate=0.95;u.pitch=1.05;
-    u.onstart=()=>setSpeaking(true);u.onend=()=>setSpeaking(false);
+    const fv=vs.find(v=>v.name==="Google UK English Female")||vs.find(v=>v.name==="Microsoft Zira")||vs.find(v=>v.name==="Microsoft Hazel")||vs.find(v=>v.name==="Microsoft Susan")||vs[0];
     window.speechSynthesis.speak(u);
   }
   function toggleCall(){
