@@ -330,7 +330,7 @@ function RivaWidget(){
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
     const vs=window.speechSynthesis.getVoices();
-    const fv=vs.find(v=>/female|samantha|victoria|karen|zira/i.test(v.name))||vs[0];
+    const fv=vs.find(v=>v.name==="Google UK English Female")||vs.find(v=>v.name.includes("Female"))||vs.find(v=>/female|zira|samantha|victoria|karen|moira/i.test(v.name))||vs.find((_v,i)=>i===1)||vs[0];
     if(fv)u.voice=fv;u.rate=0.95;u.pitch=1.05;
     u.onstart=()=>setSpeaking(true);u.onend=()=>setSpeaking(false);
     window.speechSynthesis.speak(u);
