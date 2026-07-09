@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 const CAL = "https://cal.com/chandrakala.m/discovery-call";
 const LINKEDIN = "https://www.linkedin.com/company/workriva";
-const ELEVENLABS_KEY = "914bd3f8c90f40e769229bf13777de1a74ce6f58fd1e44971d002245aae0a1bf";
+const ELEVENLABS_KEY = "4084d953fb5b92c7bbeeca332b2b43d013bd7d769ccc1330e55b5e61bcb57edc";
 const VOICE_ID = "21m00Tcm4TlvDq8ikWAM";
 
 const T = {
