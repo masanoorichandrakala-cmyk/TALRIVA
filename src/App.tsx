@@ -5,7 +5,7 @@ async function speak(text:string){
       const res=await fetch("https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM",{
         method:"POST",
         headers:{
-          "xi-api-key":"98670ee6fe3271f64bc39aa93d9cda29e79d41a0fffa07487d5ed00c9551d009",
+          "xi-api-key":914bd3f8c90f40e769229bf13777de1a74ce6f58fd1e44971d002245aae0a1bf
           "Content-Type":"application/json",
           "Accept":"audio/mpeg"
         },
