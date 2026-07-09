@@ -325,7 +325,55 @@ function RivaWidget(){
   };
   const FB=["Great question! Book a free strategy session?","For specific details, book a 30-minute strategy session — zero obligation.","Book a free session at workriva.com"];
   useEffect(()=>{if(chatRef.current)(chatRef.current as HTMLDivElement).scrollTop=(chatRef.current as HTMLDivElement).scrollHeight;},[msgs,typing]);
-  function speak(text:string){
+ function speak(text:string){
+    if(!window.speechSynthesis)return;
+    window.speechSynthesis.cancel();
+    setTimeout(()=>{
+      const u=new SpeechSynthesisUtterance(text);
+      const vs=window.speechSynthesis.getVoices();
+      const fv=vs.find(v=>v.name==="Google UK English Female")
+        ||vs.find(v=>v.name==="Microsoft Zira Desktop - English (United States)")
+        ||vs.find(v=>v.name==="Microsoft Hazel Desktop - English (Great Britain)")
+        ||vs.find(v=>/female|zira|hazel|susan/i.test(v.name));
+      if(fv)u.voice=fv;
+      u.rate=0.92;u.pitch=1.1;u.lang="en-GB";
+      u.onstart=()=>setSpeaking(true);
+      u.onend=()=>setSpeaking(false);
+      window.speechSynthesis.speak(u);
+    },100);
+  }
+    if(!window.speechSynthesis)return;
+    window.speechSynthesis.cancel();
+    setTimeout(()=>{
+      const u=new SpeechSynthesisUtterance(text);
+      const vs=window.speechSynthesis.getVoices();
+      const fv=vs.find(v=>v.name==="Google UK English Female")
+        ||vs.find(v=>v.name==="Microsoft Zira Desktop - English (United States)")
+        ||vs.find(v=>v.name==="Microsoft Hazel Desktop - English (Great Britain)")
+        ||vs.find(v=>/female|zira|hazel|susan/i.test(v.name));
+      if(fv)u.voice=fv;
+      u.rate=0.92;u.pitch=1.1;u.lang="en-GB";
+      u.onstart=()=>setSpeaking(true);
+      u.onend=()=>setSpeaking(false);
+      window.speechSynthesis.speak(u);
+    },100);
+  }
+    if(!window.speechSynthesis)return;
+    window.speechSynthesis.cancel();
+    setTimeout(()=>{
+      const u=new SpeechSynthesisUtterance(text);
+      const vs=window.speechSynthesis.getVoices();
+      const fv=vs.find(v=>v.name==="Google UK English Female")
+        ||vs.find(v=>v.name==="Microsoft Zira Desktop - English (United States)")
+        ||vs.find(v=>v.name==="Microsoft Hazel Desktop - English (Great Britain)")
+        ||vs.find(v=>/female|zira|hazel|susan/i.test(v.name));
+      if(fv)u.voice=fv;
+      u.rate=0.92;u.pitch=1.1;u.lang="en-GB";
+      u.onstart=()=>setSpeaking(true);
+      u.onend=()=>setSpeaking(false);
+      window.speechSynthesis.speak(u);
+    },100);
+  }
     if(!window.speechSynthesis)return;
     window.speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(text);
