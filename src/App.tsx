@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const CAL = "https://cal.com/chandrakala.m/discovery-call";
 const LINKEDIN = "https://www.linkedin.com/company/workriva";
 const ELEVENLABS_KEY = "d968bd8b5342da6a6ef92204b1d9c51f5afa4d8dbe8120b35e01b045786847ae";
-const VOICE_ID = "21m00Tcm4TlvDq8ikWAM";
+const VOICE_ID = "EXAVITQu4vr4xnSDxMaL";
 
 const T = {
   bg:"#0F0A04", surface:"#1A1208", surface2:"#231a0c",
@@ -388,7 +388,7 @@ function RivaWidget(){
         },
         body:JSON.stringify({
           text,
-          model_id:"eleven_monolingual_v1",
+         model_id:"eleven_turbo_v2",
           voice_settings:{stability:0.5,similarity_boost:0.75}
         })
       });
