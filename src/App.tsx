@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const CAL = "https://cal.com/chandrakala.m/discovery-call";
-const LINKEDIN = "https://www.linkedin.com/company/workriva";
+const LINKEDIN = "https://www.linkedin.com/company/talriva";
 const ELEVENLABS_KEY = import.meta.env.VITE_ELEVENLABS_KEY;
 const VOICE_ID = "EXAVITQu4vr4xnSDxMaL";
 
@@ -103,7 +103,7 @@ const card={background:"#1A1208",border:"0.5px solid rgba(255,107,53,0.15)",bord
         <div style={{width:36,height:36,borderRadius:8,background:"linear-gradient(135deg,#FF6B35,#FFD166)",display:"flex",alignItems:"center",justifyContent:"center"}}>
           <svg width="20" height="20" viewBox="0 0 20 20"><polyline points="3,6 7,16 10,10 13,16 17,6" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
-        <span style={{fontSize:16,fontWeight:500,letterSpacing:"0.04em"}}>WORKRIVA</span>
+        <span style={{fontSize:16,fontWeight:500,letterSpacing:"0.04em"}}>TALRIVA</span>
       </div>
       <div className="nav-links" style={{display:"flex",gap:"2rem",fontSize:13,color:"rgba(250,250,248,0.45)"}}>
         {["Problem","System","Pricing","Founder"].map(s=>(
@@ -132,7 +132,7 @@ function Hero(){
           <span style={{background:"linear-gradient(90deg,#FF6B35,#FFD166,#FF6B35)",backgroundSize:"200% auto",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text",animation:"shimmer 4s linear infinite"}}>duct tape and heroics.</span>
         </h1>
         <p className="fade-up-2" style={{fontSize:"1.125rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:580,marginBottom:"2.5rem"}}>
-          Workriva designs and installs complete AI infrastructure for HR Tech and workforce teams — not another chatbot, not another tool.
+          Talriva designs and installs complete AI infrastructure for HR Tech and workforce teams — not another chatbot, not another tool.
         </p>
         <div className="fade-up-3" style={{display:"flex",gap:"1rem",flexWrap:"wrap",marginBottom:"2rem"}}>
           <a href={CAL} target="_blank" rel="noreferrer" className="btn-p" style={BP}>Book AI Strategy Session →</a>
@@ -162,13 +162,14 @@ function Hero(){
         <h2 style={{fontSize:"clamp(2rem,4vw,3rem)",fontWeight:500,color:"#FAFAF8",lineHeight:1.15,marginBottom:"1.25rem"}}>Your HR stack looks fine on paper.<br/>It's bleeding money in practice.</h2>
         <p style={{fontSize:"1.0625rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:560,marginBottom:"3rem"}}>You bought the ATS. You bought the HRIS. You bought the survey tool, the LMS, the "AI recruiter." And still — recruiters live in inboxes, onboarding is a Notion doc no one reads, and every compliance deadline is a fire drill.</p>
         <div className="prob-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"1rem",marginBottom:"2rem"}}>
-          {[[42,"%","42-day time-to-hire","Top candidates are hired by competitors before you finish scheduling round two."],[28,"%","28% quit in 90 days","Broken onboarding costs 50–200% of annual salary per replacement."],[67,"%","67% face violations","Startups accumulate $38K in avoidable fines in the first three years."],[0,"","Gut-based decisions","Headcount, pay and promotion calls made without workforce analytics."]].map(([n,s,t,d],i)=>(
+          {[[42,"%","42-day time-to-hire","Top candidates are hired by competitors before you finish scheduling round two.","SHRM Talent Acquisition Benchmarking Report, 2024"],[28,"%","28% quit in 90 days","Broken onboarding costs 50–200% of annual salary per replacement.","BambooHR State of HR Report, 2024"],[67,"%","67% face violations","Startups accumulate $38K in avoidable fines in the first three years.","ADP Compliance Survey, 2024"],[0,"","Gut-based decisions","Headcount, pay and promotion calls made without workforce analytics.",null]].map(([n,s,t,d,src],i)=>(
             <div key={i} className="tier-card" style={{...card,transition:"all .25s"}}>
               <div style={{fontSize:"2.5rem",fontWeight:500,color:"#FF6B35",marginBottom:".25rem",animation:"stat-glow 3s ease-in-out infinite"}}>
                 {v&&Number(n)>0?<Counter from={0} to={Number(n)} suffix={String(s)}/>:<span>{n}{s}</span>}
               </div>
               <div style={{fontSize:12,color:"#FFD166",marginBottom:".75rem",textTransform:"uppercase",letterSpacing:".08em"}}>{String(t)}</div>
-              <p style={{fontSize:13,color:"rgba(250,250,248,0.45)",lineHeight:1.6}}>{String(d)}</p>
+              <p style={{fontSize:13,color:"rgba(250,250,248,0.45)",lineHeight:1.6,marginBottom:src?".75rem":0}}>{String(d)}</p>
+              {src&&<p style={{fontSize:10.5,color:"rgba(250,250,248,0.3)",fontStyle:"italic"}}>Source: {String(src)}</p>}
             </div>
           ))}
         </div>
@@ -231,32 +232,18 @@ function System(){
     </section>
   );
 }function Offer(){
-  const tiers=[
-    {sz:"5–25 employees",nm:"HR Foundation System",dl:"3–4 week delivery",feat:false,items:["AI candidate screening & scheduling","Automated onboarding drip","AI HR helpdesk for policy FAQs"],out:"Time-to-hire 42 → 18 days · 40% HR admin recovered"},
-    {sz:"15–60 employees",nm:"HR Growth System",dl:"6-week build + 60-day retainer",feat:true,items:["Everything in Foundation","Pulse survey + sentiment alerts","AI performance review drafting","Compliance document monitor","Automated offboarding workflow"],out:"90-day retention +50% · Violations –55% · 2 hrs/day per HR"},
-    {sz:"50–150 employees",nm:"HR Intelligence System",dl:"8-week build + 90-day retainer",feat:false,items:["Everything in Growth","Custom workforce analytics SaaS","AI employer-brand content engine","Multi-state compliance agent","Quarterly strategy + optimization"],out:"Scales to 200+ employees with zero HR headcount added"},
-  ];
   return(
     <section id="pricing" style={{position:"relative",padding:"6rem 0",background:"#1A1208",overflow:"hidden"}}>
       <div style={orb("#FF6B35","400px","400px",undefined,undefined,"-80px","-100px","orb-b 9s ease-in-out infinite")}/>
       <div style={{maxWidth:1100,margin:"0 auto",padding:"0 2rem",position:"relative",zIndex:2}}>
         <div style={{fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",color:"#FFD166",marginBottom:"1rem",display:"flex",alignItems:"center",gap:8}}><span style={{width:5,height:5,borderRadius:"50%",background:"#FF6B35",display:"inline-block"}}/>Chapter IV · The Offer Stack</div>
-        <h2 style={{fontSize:"clamp(2rem,4vw,3rem)",fontWeight:500,color:"#FAFAF8",lineHeight:1.15,marginBottom:"1.25rem"}}>Three engagement tiers.<br/>One outcome contract.</h2>
-        <p style={{fontSize:"1.0625rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:560,marginBottom:"3rem"}}>Each tier is a complete, guaranteed system — scoped to your headcount stage. We commit to the KPIs in writing before we build.</p>
-        <div className="offer-grid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"1.25rem",marginBottom:"3rem"}}>
-          {tiers.map((t,i)=>(
-            <div key={i} className="tier-card" style={{...card,position:"relative",border:t.feat?"1.5px solid #FF6B35":"0.5px solid rgba(255,107,53,0.15)",transition:"all .25s"}}>
-              {t.feat&&<div style={{position:"absolute",top:-12,left:"50%",transform:"translateX(-50%)",background:"#FF6B35",color:"#fff",fontSize:11,padding:"3px 14px",borderRadius:20,whiteSpace:"nowrap",fontWeight:500}}>Most engaged</div>}
-              <div style={{fontSize:11,color:"rgba(250,250,248,0.45)",marginBottom:".5rem"}}>{t.sz}</div>
-              <h3 style={{fontSize:17,fontWeight:500,color:"#FAFAF8",marginBottom:".4rem"}}>{t.nm}</h3>
-              <div style={{fontSize:12,color:"#FFD166",marginBottom:"1.25rem"}}>{t.dl}</div>
-              <ul style={{listStyle:"none",marginBottom:"1.5rem"}}>
-                {t.items.map(it=><li key={it} style={{fontSize:13,color:"rgba(250,250,248,0.45)",padding:"5px 0",borderBottom:"0.5px solid rgba(250,250,248,0.12)",display:"flex",gap:8}}><span style={{color:"#FF6B35"}}>→</span>{it}</li>)}
-              </ul>
-              <div style={{fontSize:12,color:"#FFD166",marginBottom:"1.5rem",lineHeight:1.5}}>{t.out}</div>
-              <a href={CAL} target="_blank" rel="noreferrer" className={t.feat?"btn-p":"btn-s"} style={{...(t.feat?BP:BS),width:"100%",justifyContent:"center",fontSize:13}}>Discuss this tier</a>
-            </div>
-          ))}
+        <h2 style={{fontSize:"clamp(2rem,4vw,3rem)",fontWeight:500,color:"#FAFAF8",lineHeight:1.15,marginBottom:"1.25rem"}}>We build in stages —<br/>scoped to your team.</h2>
+        <p style={{fontSize:"1.0625rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:580,marginBottom:"3rem"}}>Whether you're a 10-person startup handling HR manually, or a 100-person company preparing for your next funding round, we scope our AI systems to match where you are today — and where you're headed next. Every engagement is a complete, guaranteed system with KPIs committed in writing before we build.</p>
+        <div style={{...card,border:"1.5px solid #FF6B35",marginBottom:"3rem",textAlign:"center",padding:"2.5rem"}}>
+          <div style={{fontSize:12,color:"#FFD166",letterSpacing:".08em",textTransform:"uppercase",marginBottom:"1rem"}}>Ready to see what fits your team?</div>
+          <h3 style={{fontSize:22,fontWeight:500,color:"#FAFAF8",marginBottom:"1rem"}}>Book a strategy session and we'll match you to the right system.</h3>
+          <p style={{fontSize:14,color:"rgba(250,250,248,0.45)",lineHeight:1.7,marginBottom:"1.75rem",maxWidth:480,marginLeft:"auto",marginRight:"auto"}}>You'll leave the call with a scoped plan, a timeline, and a quoted investment — tailored to your headcount and priorities, not a generic price list.</p>
+          <a href={CAL} target="_blank" rel="noreferrer" className="btn-p" style={{...BP,fontSize:15}}>Book AI Strategy Session →</a>
         </div>
         <h3 style={{fontSize:18,fontWeight:500,color:"#FAFAF8",marginBottom:"1.5rem"}}>From kickoff to live systems in weeks, not quarters.</h3>
         <div className="impl-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"1rem"}}>
@@ -299,10 +286,10 @@ function Founder(){
           </div>
           <div style={{flex:1}}>
             <div style={{fontSize:22,fontWeight:500,marginBottom:3,background:"linear-gradient(90deg,#fff,#FFD166,#FF6B35,#FFD166)",backgroundSize:"200% auto",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text",animation:"shimmer 4s linear infinite"}}>Chandrakala Masanoori</div>
-            <div style={{fontSize:13,color:"rgba(250,250,248,0.45)",marginBottom:"1rem"}}>Founder, Workriva · HR Tech & Workforce AI</div>
+            <div style={{fontSize:13,color:"rgba(250,250,248,0.45)",marginBottom:"1rem"}}>Founder, Talriva · HR Tech & Workforce AI</div>
             <p style={{fontSize:14,color:"rgba(250,250,248,0.45)",lineHeight:1.75,marginBottom:"1.25rem"}}>13+ years inside HR — as an academic, a recruiter, and an employee relations lead handling onboarding, compliance, immigration (LCA, I-9, E-Verify), and HRIS operations. I've lived every broken workflow this industry runs on.</p>
             <div style={{borderLeft:"2px solid #FF6B35",paddingLeft:"1rem",marginBottom:"1.5rem",animation:"pulse-border 3s ease-in-out infinite"}}>
-              <p style={{fontSize:15,color:"rgba(250,250,248,.88)",fontStyle:"italic",lineHeight:1.65}}>"I watched good HR professionals burn out because their systems failed them — not their skills. I started Workriva so that never has to be the reason someone leaves a job they love."</p>
+              <p style={{fontSize:15,color:"rgba(250,250,248,.88)",fontStyle:"italic",lineHeight:1.65}}>"I watched good HR professionals burn out because their systems failed them — not their skills. I started Talriva so that never has to be the reason someone leaves a job they love."</p>
             </div>
             <div style={{display:"flex",flexWrap:"wrap",gap:7,marginBottom:"1.5rem"}}>
               {["HR operations","Immigration compliance","HRIS systems","Onboarding architecture","Workforce AI"].map((b,i)=>(
@@ -329,7 +316,7 @@ function Founder(){
       <div style={{maxWidth:1100,margin:"0 auto",padding:"0 2rem",position:"relative",zIndex:2}}>
         <div style={{fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",color:"#FFD166",marginBottom:"1rem",display:"flex",alignItems:"center",gap:8}}><span style={{width:5,height:5,borderRadius:"50%",background:"#FF6B35",display:"inline-block"}}/>Chapter V · The Guarantees</div>
         <h2 style={{fontSize:"clamp(2rem,4vw,3rem)",fontWeight:500,color:"#FAFAF8",lineHeight:1.15,marginBottom:"1.25rem"}}>Answering the three questions<br/>every operator asks.</h2>
-        <p style={{fontSize:"1.0625rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:560,marginBottom:"3rem"}}>We built Workriva for the CTO, the Head of People, and the CFO — because sustainable AI in HR needs all three to say yes.</p>
+        <p style={{fontSize:"1.0625rem",color:"rgba(250,250,248,0.45)",lineHeight:1.75,maxWidth:560,marginBottom:"3rem"}}>We built Talriva for the CTO, the Head of People, and the CFO — because sustainable AI in HR needs all three to say yes.</p>
         <div className="guarantee-grid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"1.25rem",marginBottom:"3rem"}}>
           {[["Is our employee data safe?","Every automation runs on least-privilege access, encrypted transport, and audit logs. SOC2-aligned by default, with NDA and DPA on request. We never train third-party models on your data."],["Will this integrate with our existing stack?","Yes — Workday, BambooHR, Rippling, Greenhouse, Ashby, Slack, Teams, Google Workspace, Notion, Airtable. If it has an API or webhook, n8n and Make.com make it a first-class citizen."],["What if the ROI doesn't materialize?","We commit to KPIs in writing before build starts. If agreed metrics aren't hit within the retainer window, we rebuild the workflow at no cost. Your baseline, our accountability."]].map(([q,a])=>(
             <div key={q} style={{...card,borderTop:"2px solid #FFD166"}} className="tier-card">
@@ -356,7 +343,7 @@ function RivaWidget(){
   const[open,setOpen]=useState(false);
   const[tab,setTab]=useState("voice");
   const[calling,setCalling]=useState(false);
-  const[msgs,setMsgs]=useState([{t:"bot",m:"Hi! I'm Riva, Workriva's AI assistant. How can I help you today?"}]);
+  const[msgs,setMsgs]=useState([{t:"bot",m:"Hi! I'm Riva, Talriva's AI assistant. How can I help you today?"}]);
   const[input,setInput]=useState("");
   const[typing,setTyping]=useState(false);
   const[transcript,setTranscript]=useState("Riva will greet you and ask how she can help.");
@@ -364,12 +351,12 @@ function RivaWidget(){
   const fbRef=useRef(0);
   const chatRef=useRef<HTMLDivElement>(null);
   const RESP:{[key:string]:string}={
-    "what services?":"Workriva builds complete HR AI infrastructure — candidate screening, onboarding automation, HR helpdesk, compliance monitoring, performance reviews, and workforce analytics.",
-    "how much?":"We have three tiers based on your team size. Each comes with a guaranteed outcome contract. Book a strategy session for a custom quote.",
+    "what services?":"Talriva builds complete HR AI infrastructure — candidate screening, onboarding automation, HR helpdesk, compliance monitoring, performance reviews, and workforce analytics.",
+    "how much?":"We build in stages, scoped to your team's size. Book a strategy session and we'll match you to the right system with a quoted investment.",
     "book session":"Book a free 30-minute session at cal.com/chandrakala.m/discovery-call",
     "how long?":"Foundation systems go live in 3–4 weeks. Growth in 6 weeks. Intelligence in 8 weeks.",
   };
-  const FB=["Great question! Book a free strategy session?","For specific details, book a 30-minute strategy session — zero obligation.","Book a free session at workriva.com"];
+  const FB=["Great question! Book a free strategy session?","For specific details, book a 30-minute strategy session — zero obligation.","Book a free session at talriva.co"];
   
   useEffect(()=>{
     if(chatRef.current)chatRef.current.scrollTop=chatRef.current.scrollHeight;
@@ -409,7 +396,7 @@ function RivaWidget(){
       setSpeaking(false);
     } else {
       setCalling(true);
-      const g="Hi! I'm Riva, Workriva's AI assistant. I help HR teams understand how Workriva can transform their people operations with AI. What brings you here today?";
+      const g="Hi! I'm Riva, Talriva's AI assistant. I help HR teams understand how Talriva can transform their people operations with AI. What brings you here today?";
       setTranscript(g);
       speak(g);
     }
@@ -438,7 +425,7 @@ function RivaWidget(){
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F0A04" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
             </div>
             <div style={{flex:1}}>
-              <div style={{fontSize:14,fontWeight:500,color:"#FAFAF8"}}>Riva · Workriva AI</div>
+              <div style={{fontSize:14,fontWeight:500,color:"#FAFAF8"}}>Riva · Talriva AI</div>
               <div style={{fontSize:11,color:"rgba(250,250,248,0.45)"}}>{calling?"On a call":speaking?"Speaking…":"Online · Ready to help"}</div>
             </div>
             <button onClick={()=>setOpen(false)} style={{background:"none",border:"none",color:"rgba(250,250,248,0.45)",cursor:"pointer",fontSize:18}}>×</button>
@@ -480,7 +467,7 @@ function RivaWidget(){
               </div>
             </>
           )}
-          <div style={{padding:".625rem",textAlign:"center",fontSize:11,color:"rgba(250,250,248,0.12)",borderTop:"0.5px solid rgba(255,107,53,.1)"}}>Powered by Workriva AI</div>
+          <div style={{padding:".625rem",textAlign:"center",fontSize:11,color:"rgba(250,250,248,0.12)",borderTop:"0.5px solid rgba(255,107,53,.1)"}}>Powered by Talriva AI</div>
         </div>
       )}
       <button onClick={()=>setOpen(o=>!o)} style={{width:58,height:58,borderRadius:"50%",background:"linear-gradient(135deg,#FF6B35,#FFD166)",border:"none",cursor:"pointer",fontSize:24,boxShadow:"0 8px 24px rgba(255,107,53,.4)"}}>
@@ -497,15 +484,15 @@ function Footer(){
         <div style={{width:28,height:28,borderRadius:6,background:"linear-gradient(135deg,#FF6B35,#FFD166)",display:"flex",alignItems:"center",justifyContent:"center"}}>
           <svg width="14" height="14" viewBox="0 0 20 20"><polyline points="3,6 7,16 10,10 13,16 17,6" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
-        <span style={{fontSize:14,fontWeight:500,letterSpacing:"0.04em"}}>WORKRIVA</span>
+        <span style={{fontSize:14,fontWeight:500,letterSpacing:"0.04em"}}>TALRIVA</span>
       </div>
       <p style={{fontSize:12,color:"rgba(250,250,248,0.45)",marginBottom:".5rem"}}>HR Tech · Workforce AI Infrastructure</p>
       <div style={{display:"flex",gap:"1.5rem",justifyContent:"center",marginBottom:".75rem"}}>
-        <a href="mailto:hello@workriva.com" style={{fontSize:12,color:"rgba(250,250,248,0.45)",textDecoration:"none"}}>hello@workriva.com</a>
+        <a href="mailto:hello@talriva.co" style={{fontSize:12,color:"rgba(250,250,248,0.45)",textDecoration:"none"}}>hello@talriva.co</a>
         <a href={LINKEDIN} target="_blank" rel="noreferrer" style={{fontSize:12,color:"rgba(250,250,248,0.45)",textDecoration:"none"}}>LinkedIn</a>
         <a href={CAL} target="_blank" rel="noreferrer" style={{fontSize:12,color:"#FF6B35",textDecoration:"none"}}>Book a session</a>
       </div>
-      <p style={{fontSize:11,color:"rgba(250,250,248,0.12)"}}>© 2026 Workriva. Editorial-grade AI systems for people-first companies.</p>
+      <p style={{fontSize:11,color:"rgba(250,250,248,0.12)"}}>© 2026 Talriva. Editorial-grade AI systems for people-first companies.</p>
     </footer>
   );
 }
@@ -528,3 +515,4 @@ export default function App(){
     </>
   );
 }
+
