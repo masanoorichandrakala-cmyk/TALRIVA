@@ -515,4 +515,5 @@ export default function App(){
     </>
   );
 }
+"Rename to Talriva + hide pricing tiers + add stat citations"
 
