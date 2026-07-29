@@ -101,7 +101,7 @@ const card={background:"#1A1208",border:"0.5px solid rgba(255,107,53,0.15)",bord
     <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,padding:"1rem 2rem",display:"flex",alignItems:"center",justifyContent:"space-between",background:sc?"rgba(15,10,4,.92)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc?"0.5px solid rgba(255,107,53,0.15)":"none",transition:"all .3s"}}>
       <div style={{display:"flex",alignItems:"center",gap:10}}>
         <div style={{width:36,height:36,borderRadius:8,background:"linear-gradient(135deg,#FF6B35,#FFD166)",display:"flex",alignItems:"center",justifyContent:"center"}}>
-         <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4,6 H16 M10,6 V17" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4,6 H16 M10,6 V17" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
         <span style={{fontSize:16,fontWeight:500,letterSpacing:"0.04em"}}>TALRIVA</span>
       </div>
@@ -223,7 +223,7 @@ function System(){
             {["ATS · HRIS · Payroll","n8n / Make.com orchestration","AI agents & voice","Analytics & alerts"].map((s,i,a)=>(
               <span key={s} style={{display:"flex",alignItems:"center",gap:"0.5rem"}}>
                 <span style={{background:"rgba(255,107,53,.08)",border:"0.5px solid rgba(255,107,53,.2)",borderRadius:8,padding:"8px 14px",fontSize:12,color:"#FAFAF8"}}>{s}</span>
-                {i<a.length-1&&<span style={{color:"#FF6B35",fontSize:16}}>→</span>} 
+                {i<a.length-1&&<span style={{color:"#FF6B35",fontSize:16}}>→</span>}
               </span>
             ))}
           </div>
@@ -482,7 +482,7 @@ function Footer(){
     <footer style={{background:"#0F0A04",borderTop:"0.5px solid rgba(255,107,53,0.15)",padding:"2rem",textAlign:"center"}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:10,marginBottom:".75rem"}}>
         <div style={{width:28,height:28,borderRadius:6,background:"linear-gradient(135deg,#FF6B35,#FFD166)",display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4,6 H16 M10,6 V17" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 20 20"><path d="M4,6 H16 M10,6 V17" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
         <span style={{fontSize:14,fontWeight:500,letterSpacing:"0.04em"}}>TALRIVA</span>
       </div>
@@ -514,7 +514,6 @@ export default function App(){
       <RivaWidget/>
     </>
   );
-  "Update logo mark to T"
 }
-"Rename to Talriva + hide pricing tiers + add stat citations"
-Fix broken SVG tag from replace-all
+
+"Replace with clean corrected file"
