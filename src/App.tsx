@@ -101,7 +101,7 @@ const card={background:"#1A1208",border:"0.5px solid rgba(255,107,53,0.15)",bord
     <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,padding:"1rem 2rem",display:"flex",alignItems:"center",justifyContent:"space-between",background:sc?"rgba(15,10,4,.92)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc?"0.5px solid rgba(255,107,53,0.15)":"none",transition:"all .3s"}}>
       <div style={{display:"flex",alignItems:"center",gap:10}}>
         <div style={{width:36,height:36,borderRadius:8,background:"linear-gradient(135deg,#FF6B35,#FFD166)",display:"flex",alignItems:"center",justifyContent:"center"}}>
-         <svg width="20" height="20" viewBox="0 0 20 20"><polyline points="3,6 7,16 10,10 13,16 17,6" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+         <svg width="20" height="20" viewBox="0 0 20 20">path d="M4,6 H16 M10,6 V17" 7,16 10,10 13,16 17,6" fill="none" stroke="#0F0A04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
         <span style={{fontSize:16,fontWeight:500,letterSpacing:"0.04em"}}>TALRIVA</span>
       </div>
